@@ -13,6 +13,15 @@ const TotalsWrapper = styled.div `
  margin-bottom:2%;
 `;
 
+const Total = styled.span`
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+`;
+
+
 const Totals = ({count}) => (
 
  <TotalsWrapper>

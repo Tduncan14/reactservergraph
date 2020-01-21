@@ -20,6 +20,13 @@ const Alert = styled.span`
 `;
 
 
+const CartItemsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+
 const Cart = ({history,loading,error,cart}) => (
 
     <>
@@ -30,14 +37,14 @@ const Cart = ({history,loading,error,cart}) => (
    {
     !loading && !error ? (
         <CartWrapper>
-     <CartItemWrapper>
+     <CartItemsWrapper>
          {
            cart.products &&
            cart.products.map(product => (
                <ProductItem key ={product.id} data={product} />
            ))
          }
-     </CartItemWrapper>
+     </CartItemsWrapper>
      <Totals count = {cart.total} />
         </CartWrapper>
 

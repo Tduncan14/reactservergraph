@@ -1,5 +1,5 @@
 import React from 'react';
-import Buttom from '../Button/Button';
+import Button from '../Button/Button';
 
 
 const CartButton = ({onClick}) => (
