@@ -4,7 +4,20 @@ import {Route,Switch} from 'react-router-dom';
 import Header from './Header/Header';
 import Products from './Products/Products';
 import Cart from './Cart/Cart';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import ApolloClient from 'apollo-client';
+import {HttpLink} from 'apollo-link-http';
+import {ApolloProvider} from 'react-apollo';
 
+
+
+const client = () => new ApolloClient ({
+  link: new HttpLink({
+
+    uri:'http://localhost:6000',
+
+  })
+})
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,7 +40,7 @@ text-align:center;
 
 const App = () => (
 
-  <>
+  <ApolloProvider client={client}>
   <GlobalStyle />
   <AppWrapper>
     <Header />
@@ -37,7 +50,7 @@ const App = () => (
     </Switch>
 
   </AppWrapper>
-  </>
+  </ApolloProvider>
 )
 
 
